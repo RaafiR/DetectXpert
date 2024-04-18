@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+  <div class="container-fluid navbar-custom">
+    <div class="container-fluid p-3 text-left">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <img src="/static/Images/image_prev_ui.png" alt="Logo" class="logo">
+                </div>
+                <div class="col">
+                    <h1 class="mb-0 logo-text">DetectXpert</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/"><i class="fa-solid fa-question"></i> About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('detect') }}"><i class="fa-solid fa-eye"></i> Detection</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('report') }}"><i class="fa-solid fa-bug"></i> Report</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="container mt-5">
+  <div class="accordion" id="accordionExample">
+    <div class="card bg-light mb-4 rounded">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Introduction
+          </button>
+          <button class="btn btn-link ml-auto" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <p>Welcome to a revolution in the world of object detection! At Detect Xpert, we're pioneering a new era of innovation, where identifying objects becomes seamless and intuitive.</p>
+          <img src="/static/Images/BGimg.jpeg" alt="Introduction Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <div class="card bg-light mb-4 rounded">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Object Detection Technology
+          </button>
+          <button class="btn btn-link ml-auto" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          <p>Object detection technology merges computer vision and machine learning, employing algorithms and models to analyze visual data. Techniques like convolutional neural networks (CNNs), YOLO (You Only Look Once), and Faster R-CNN drive its accuracy and efficiency. With advancements in deep learning and hardware acceleration, object detection systems find applications across industries.</p>
+          <img src="/static/Images/psgg2.jpg" alt="Passage2" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <div class="card bg-light mb-4 rounded">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            OpenCV Integration
+          </button>
+          <button class="btn btn-link ml-auto" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          <p>OpenCV (Open Source Computer Vision Library) is a versatile open-source tool for computer vision and image processing. Its wide range of functions and algorithms enhances object detection systems. Developers leverage OpenCV to preprocess data, extract features, and implement advanced algorithms. Its cross-platform compatibility and extensive documentation make it invaluable for building robust solutions.</p>
+          <img src="/static/Images/psg3.png" alt="Passage3" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <div class="card bg-light mb-4 rounded">
+      <div class="card-header" id="headingFour">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Visual Enhancement
+          </button>
+          <button class="btn btn-link ml-auto" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body">
+          <p>Visual enhancement techniques are pivotal in refining object detection systems. They aim to enhance image quality and clarity, facilitating accurate object detection. Techniques like noise reduction, contrast enhancement, and data augmentation improve model performance and robustness. By integrating visual enhancement methods, developers achieve superior results in real-world scenarios.</p>
+          <img src="/static/Images/psg4.jpeg" alt="Passage4" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="footer" style="background-color: #176087; color: #afd7f6;">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h3 class="mb-4">Subscribe for Updates</h3>
+          <form class="subscribe-form form-inline">
+            <input type="email" class="form-control mr-2 mb-2 mb-md-0" placeholder="Enter your email">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h3 class="mb-4">Contact Us</h3>
+          <p>Email: <a href="mailto:2110520021@klh.edu.in" class="text-light">2110520021@klh.edu.in</a></p>
+          <p>Phone: <span class="text-light">XXXXXXXX999</span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/static/script.js"></script>
+
+</body>
+</html>
